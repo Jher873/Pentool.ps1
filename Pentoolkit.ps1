@@ -1,5 +1,6 @@
-# PowerShell Pentester Menu Script
+# PowerShell Pentester Menu Script 
 # Menu-driven interface for various pentesting tasks
+
 function Show-Menu {
     Clear-Host
     Write-Host "==========================================="
@@ -15,7 +16,7 @@ function Show-Menu {
     Write-Host "Please select an option (1-6):"
 }
 
-function Perform-Reconnaissance {
+function Invoke-Reconnaissance {
     Clear-Host
     Write-Host "Starting Reconnaissance..."
     # Example: IP information gathering
@@ -25,7 +26,7 @@ function Perform-Reconnaissance {
     Pause
 }
 
-function Perform-Enumeration {
+function Invoke-Enumeration {
     Clear-Host
     Write-Host "Starting Enumeration..."
     # Example: Service enumeration on target
@@ -35,7 +36,7 @@ function Perform-Enumeration {
     Pause
 }
 
-function Perform-PrivilegeEscalation {
+function Invoke-PrivilegeEscalation {
     Clear-Host
     Write-Host "Starting Privilege Escalation Checks..."
     # Example: Check for Sudo permissions or known exploits
@@ -48,7 +49,7 @@ function Perform-PrivilegeEscalation {
     Pause
 }
 
-function Perform-FileSearching {
+function Find-Files {
     Clear-Host
     Write-Host "Starting File Searching..."
     # Example: Search for files with specific extensions or names
@@ -59,7 +60,7 @@ function Perform-FileSearching {
     Pause
 }
 
-function Perform-Exfiltration {
+function Invoke-Exfiltration {
     Clear-Host
     Write-Host "Starting Data Exfiltration..."
     # Example: Simulate file exfiltration with a netcat or similar tool
@@ -78,11 +79,11 @@ do {
     $choice = Read-Host "Select an option (1-6)"
     
     switch ($choice) {
-        '1' { Perform-Reconnaissance }
-        '2' { Perform-Enumeration }
-        '3' { Perform-PrivilegeEscalation }
-        '4' { Perform-FileSearching }
-        '5' { Perform-Exfiltration }
+        '1' { Invoke-Reconnaissance }
+        '2' { Invoke-Enumeration }
+        '3' { Invoke-PrivilegeEscalation }
+        '4' { Find-Files }
+        '5' { Invoke-Exfiltration }
         '6' { Write-Host "Exiting..."; break }
         default { Write-Host "Invalid selection. Please select a valid option (1-6)." }
     }
